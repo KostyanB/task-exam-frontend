@@ -1,0 +1,73 @@
+@import "media.css";
+
+.reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 0;
+        margin: 0;
+        position: static;
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+}
+
+.reset-list-item {
+    padding: 0;
+
+    &::before {
+        content: none;
+    }
+}
+
+.reset-link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+
+    }
+}
+
+.reset-button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    box-shadow: none;
+    appearance: none;
+    text-align: left;
+    font-family: inherit;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+.hidden-mobile {
+    @media (--mobile) {
+        display: none !important;
+    }
+}
+
+.visible-mobile {
+    @media (--mobile-above) {
+        display: none !important;
+    }
+}
+
+.hidden-desktop-below {
+    @media (--full-below) {
+        display: none !important;
+    }
+}

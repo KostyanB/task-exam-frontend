@@ -1,0 +1,56 @@
+<form class="task-form" id="task-form" data-form >
+    <div class="task-form__row">
+        <div class="task-form__col task-form__phone">
+            <label for="task-form-phone">
+                Ваш телефон<span> *</span>
+            </label>
+            <input type="phone" class="task-form__input inputmask" name="task-form-phone"
+                placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _" data-input-required="phone"
+                data-input-placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _">
+        </div>
+        <div class="task-form__col task-form__name">
+            <label for="task-form-surname">Ваша фамилия</label>
+            <input type="text" class="task-form__input" name="task-form-surname" placeholder="Ваша фамилия"
+                data-input-placeholder="Ваша фамилия" data-task-form-surname>
+        </div>
+    </div>
+    <div class="task-form__row">
+        <div class="task-form__col task-form__comment">
+            <label for="task-form-comment">
+                Комментарий<span> *</span>
+            </label>
+            <textarea type="text" class="task-form__input" name="task-form-comment" placeholder="Комментарий"
+                data-input-placeholder="Комментарий" data-input-required="text">
+            </textarea>
+        </div>
+    </div>
+    <div class="task-form__row">
+        <div class="task-form__col">
+            <label class="task-form__checkbox">
+                <input class="task-form__checkbox_input" type="checkbox" value="Y"
+                    name="pers" tabindex="-1" data-input-required="checkbox">
+                <span class="task-form__checkbox_field">
+                    <svg>
+                        <use href="../../icons/task-icons.svg#check"></use>
+                    </svg>
+                </span>
+                <span class="task-form__checkbox_label">
+                    Согласен на обработку
+                    <a href="./main.html" target="blank"> персональных данных</a>
+                </span>
+            </label>
+        </div>
+        <div class="task-form__col">
+            <%- require("../buttons/template.ejs")({
+                        data: {
+                            'name': 'Отправить форму',
+                            'attrs': {
+                                'type': 'submit',
+                                'form': 'task-form'
+                            },
+                            'classes': 'task-btn'
+                        }
+                    })%>
+        </div>
+    </div>
+</form>

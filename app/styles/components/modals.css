@@ -1,0 +1,47 @@
+@import "../variables.css";
+@import "../media.css";
+
+.modal {
+    display: none;
+    max-width: 750px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 30px 40px;
+    &__heading {
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    &__subheading {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    &__form {
+    }
+}
+
+.fancybox-close-small {
+    width: 70px;
+    height: 70px;
+    font-size: 0;
+    overflow: hidden;
+    svg {
+        display: none;
+    }
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 35px;
+        height: 2px;
+        background-color: var(--c-gray);
+        transform: rotate(45deg);
+    }
+    &::before {
+        transform: rotate(-45deg);
+    }
+}

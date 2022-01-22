@@ -1,0 +1,74 @@
+@import "../../styles/helpers.css";
+
+.pagination {
+    --color: currentColor;
+    --activeColor: #fff;
+    --borderColor: #d7d7d7;
+    --activeBorderColor: #03A9F4;
+    --bgColor: transparent;
+    --activeBgColor: var(--activeBorderColor);
+    --navSize: 30px;
+    --navBorderWidth: 1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__items {
+        display: flex;
+        min-width: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        width: var(--navSize);
+        height: var(--navSize);
+        padding: 0;
+        margin: 0;
+        line-height: calc(var(--navSize) - calc(var(--navBorderWidth) * 2));
+        border: var(--navBorderWidth) solid var(--borderColor);
+        background-color: var(--bgColor);
+        color: var(--color);
+        text-align: center;
+        transition: .3s;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        &::before {
+            content: none;
+        }
+
+        &:hover,
+        &:focus,
+        &:active,
+        &--active {
+            --borderColor: var(--activeBorderColor);
+        }
+
+        &--active {
+            --bgColor: var(--activeBgColor);
+            --color: var(--activeColor);
+
+            cursor: default;
+        }
+
+    }
+
+    &__link {
+        text-decoration: none;
+        border: 0;
+        color: inherit;
+        width: 100%;
+        height: 100%;
+        display: block;
+
+        &:hover,
+        .pagination__item--active & {
+
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<% const data = {
+    'title': 'Модальные окна',
+    'flowContainerClass' : ''
+
+} %>
+<%- require("../layouts/header.ejs")(data) %>
+<%- require("../components/breadcrumbs/template.ejs")({
+    data: [
+        {
+            "name": "qweryt",
+            "link": "./",
+            "active": true
+        }
+    ]
+}) %>
+
+
+<div class="container">
+    <h1>Пример попапа</h1>
+
+    <ul>
+        <li>
+            <a href="#modal-feedback" class="popup-modal">
+                Открыть попап
+            </a>
+        </li>
+        <li>
+            <a href="./templates/ajaxModal.html" class="popup-modal-ajax">
+                Ajax - popup
+            </a>
+        </li>
+    </ul>
+
+
+</div>
+
+<%- require("../layouts/footer.ejs")() %>

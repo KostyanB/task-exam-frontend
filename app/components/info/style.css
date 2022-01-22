@@ -1,0 +1,10 @@
+@import "../../styles/mixins.css";
+
+.task-info {
+    @add-mixin main-text;
+
+        &>span {
+            margin-left: 8px;
+            @add-mixin info-text;
+        }
+}

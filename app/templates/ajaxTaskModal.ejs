@@ -1,0 +1,37 @@
+<div class="task-popup" id="modal-task-ajax">
+    <div class="task-popup__body">
+        <div class="task-popup__header">
+            Поп-Ап
+        </div>
+        <div class="task-popup__info">
+            <div class="task-popup__subheader">
+                Выбранные значения:
+            </div>
+            <%- require("../components/info/template.ejs")({
+                'data': {
+                    'text': 'Минимум:',
+                    'attr': 'data-js-modal-range-info',
+                    'classes': 'task-popup__data'
+                }
+            })%>
+            <%- require("../components/info/template.ejs")({
+                'data': {
+                    'text': 'Максимум:',
+                    'attr': 'data-js-modal-range-info',
+                    'classes': 'task-popup__data'
+                }
+            })%>
+        <div class="task-popup__info">
+            <div class="task-popup__subheader">
+                Выбранная метка:
+            </div>
+            <%- require("../components/info/template.ejs")({
+                'data': {
+                    'text': 'Координаты:',
+                    'attr': 'data-js-modal-map-info',
+                    'classes': 'task-popup__data'
+                }
+            })%>
+        </div>
+    </div>
+</div>

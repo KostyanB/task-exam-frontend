@@ -1,0 +1,15 @@
+@import "variables.css";
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--columnOffset) * -1);
+}
+
+.grid-col {
+    flex: 1;
+    max-width:  calc(var(--columnWidth) -  var(--columnOffset));
+    flex-basis: calc(var(--columnWidth) -  var(--columnOffset));
+    margin-left: var(--columnOffset);
+    margin-bottom: var(--columnOffset);
+}

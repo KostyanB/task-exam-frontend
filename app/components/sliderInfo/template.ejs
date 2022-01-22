@@ -1,0 +1,31 @@
+<% /* Получение входных данных */ %>
+<% var data = !data ? require('./data.json') : data %>
+<!---->
+
+<div class="slider-info <%= data.extraClasses %>" data-target-slider="<%= data.targetSlider %> ">
+    <div class="slider-info__count">
+        <%- require("../info/template.ejs")({
+            data: {
+                'text': 'Всего слайдов:',
+                'attr': 'data-slider-count-total'
+            }
+        })%>
+        <%- require("../info/template.ejs")({
+            data: {
+                'text': 'Выбранный слайд:',
+                'attr': 'data-slider-count-active'
+            }
+        })%>
+    </div>
+    <%- require("../navigation/template.ejs")({
+        data: {
+            'extraClasses': {
+                'div': 'slider__nav',
+            },
+            'attrs': {
+                'prev': 'data-slider-nav-prev',
+                'next': 'data-slider-nav-next'
+            },
+        }
+    })%>
+</div>

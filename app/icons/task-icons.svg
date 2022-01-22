@@ -1,0 +1,10 @@
+<svg width="0" height="0" class="hidden">
+  <symbol id="arrow" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 16">
+    <rect width="2.07142" height="11.0118" transform="matrix(-0.689649 -0.724144 0.68965 -0.724144 5.40186 15.9756)" fill="currentColor"></rect>
+    <rect width="2.07142" height="10.9333" transform="matrix(0.689635 -0.724158 0.689634 0.724158 4.02637 1.58301)" fill="currentColor"></rect>
+    <path d="M11 8L-1.63913e-07 8" stroke="currentColor" stroke-width="2"></path>
+  </symbol>
+  <symbol id="check" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 11">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2633 0.707078C15.8728 0.316553 15.2396 0.316554 14.8491 0.707078L7.07092 8.48523L2.12117 3.53548C1.73064 3.14495 1.09748 3.14495 0.706955 3.53548C0.316431 3.926 0.316432 4.55917 0.706956 4.94969L6.35835 10.6011C6.36015 10.6029 6.36197 10.6047 6.3638 10.6066C6.75432 10.9971 7.38749 10.9971 7.77801 10.6066L7.77802 10.6065L16.2633 2.12129C16.6538 1.73077 16.6538 1.0976 16.2633 0.707078Z" fill="currentColor"></path>
+  </symbol>
+</svg>

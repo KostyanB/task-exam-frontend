@@ -1,0 +1,9 @@
+@import "../../styles/mixins.css";
+
+.task-btn {
+    @add-mixin btn-style;
+    width: fit-content;
+    min-height: 50px;
+    padding: 12px 40px;
+    border-radius: 3px !important;
+}

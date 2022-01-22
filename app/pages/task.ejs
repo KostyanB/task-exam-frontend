@@ -1,0 +1,76 @@
+<% const data = {
+    'title': 'Практика',
+    'flowContainerClass' : ''
+} %>
+<%- require("../layouts/header.ejs")(data) %>
+
+<!-- Заголовок -->
+<div class="section">
+    <div class="section__container">
+        <h1 class="section__title">Практическое обучение и экзаменация по front-end</h1>
+    </div>
+</div>
+
+<!-- Бегунок -->
+<div class="section">
+    <div class="section__container">
+        <h2 class="section__subtitle">Бегунок</h2>
+        <%- require("../components/range/template.ejs")()%>
+    </div>
+</div>
+
+<!-- Слайдер -->
+<div class="section">
+    <div class="section__container">
+        <h2 class="section__subtitle">Слайдер</h2>
+        <%- require("../components/slider/template.ejs")()%>
+    </div>
+</div>
+
+<!-- Карта -->
+<div class="section">
+    <div class="section__container">
+        <h2 class="section__subtitle">Карта</h2>
+        <%- require("../components/yaMap/template.ejs")({
+            data: {
+                "placemarks": [
+                    [55.1642, 61.4018],
+                    [55.1659, 61.3762],
+                    [55.1553, 61.3832]
+                ],
+                "center": [55.1614, 61.3749],
+                "containerId": "yaMap",
+                "geometry": {
+                    "width": "100%",
+                    "height": "340px"
+                }
+            }
+        })%>
+    </div>
+</div>
+
+<!-- Кнопка с модальным окном -->
+<div class="section">
+    <div class="section__container">
+        <h2 class="section__subtitle">Кнопка</h2>
+        <%- require("../components/buttons/template.ejs")({
+            data: {
+                'name': 'Открыть модальное окно',
+                'attrs': {
+                    'data-src-modal': '../../templates/ajaxTaskModal.html'
+                },
+                'classes': 'task-btn popup-modal-ajax'
+            }
+        })%>
+    </div>
+</div>
+
+<!-- Форма -->
+<div class="section">
+    <div class="section__container">
+        <h2 class="section__subtitle">Форма</h2>
+        <%- require("../components/form/template.ejs")()%>
+    </div>
+</div>
+
+<%- require("../layouts/taskFooter.ejs")() %>

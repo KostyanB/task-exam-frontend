@@ -1,0 +1,28 @@
+@import 'variables.css';
+@import 'mixins.css';
+
+.section {
+    min-height: 100px;
+
+    &:nth-of-type(even) {
+        background-color: var(--smokyColor);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: min(1300px, 100vw);
+        margin: 0 auto;
+        padding: 80px 20px;
+    }
+
+    &__title {
+        @add-mixin h1-text;
+        max-width: 1070px;
+    }
+
+    &__subtitle {
+        @add-mixin h2-text;
+    }
+}

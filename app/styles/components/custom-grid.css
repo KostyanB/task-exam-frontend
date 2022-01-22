@@ -1,0 +1,18 @@
+@import "../grid.css";
+
+.custom-grid {
+    @media (--desktop) {
+        --columnOffset: 40px;
+    }
+
+    @extend .grid;
+}
+
+.custom-grid-col {
+    @media (--desktop) {
+        --columnWidth: 50%;
+        --columnOffset: 40px;
+    }
+
+    @extend .grid-col;
+}

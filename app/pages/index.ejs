@@ -1,0 +1,32 @@
+<% const data = {
+    'title': 'Список страниц',
+    'flowContainerClass' : ''
+} %>
+<%- require("../layouts/header.ejs")(data) %>
+
+<div class="container">
+    <h1>Список страниц верстки</h1>
+
+    <ul>
+        <li>
+            <a href="./task.html">Задание</a>
+        </li>
+        <li>
+            <a href="./compoments.html">Компоненты</a>
+        </li>
+        <li>
+            <a href="./main.html">Главная</a>
+        </li>
+        <li>
+            <a href="./modals.html">Пример попапа</a>
+        </li>
+        <li>
+            <a href="./grid.html">Пример сетки</a>
+        </li>
+        <li>
+            <a href="./lazy-load.html">Пример Lazy Load</a>
+        </li>
+    </ul>
+</div>
+
+<%- require("../layouts/footer.ejs")() %>

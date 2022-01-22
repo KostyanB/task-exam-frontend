@@ -1,0 +1,13 @@
+@import '../../styles/variables.css';
+
+.slider-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__count {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

@@ -1,0 +1,16 @@
+<% /* Получение входных данных */ %>
+<% var data = !data ? require('./data.json') : data %>
+
+<button
+    <% if (data.classes) { %>
+        class="<%= data.classes %>"
+    <% } %>
+    <% if (data.attrs) {
+        Object.entries(data.attrs).forEach(function(attr) { %>
+            <%= attr[0] %> = "<%= attr[1] %>"
+        <% })%>
+    <% } %>
+
+>
+    <%= data.name %>
+</button>

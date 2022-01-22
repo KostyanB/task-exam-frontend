@@ -1,0 +1,27 @@
+<% const data = {
+    'title': 'Пример сетки',
+    'flowContainerClass' : ''
+} %>
+<%- require("../layouts/header.ejs")(data) %>
+
+<div class="container">
+    <h1>Пример сетки</h1>
+
+    <h2>Обычная сетка</h2>
+
+    <div class="grid">
+        <div class="grid-col">1</div>
+        <div class="grid-col">2</div>
+        <div class="grid-col">3</div>
+    </div>
+
+    <h2>Кастомная сетка <small>(см. custom-grid.css)</small></h2>
+
+    <div class="custom-grid">
+        <div class="custom-grid-col">1</div>
+        <div class="custom-grid-col">2</div>
+        <div class="custom-grid-col">3</div>
+    </div>
+</div>
+
+<%- require("../layouts/footer.ejs")() %>

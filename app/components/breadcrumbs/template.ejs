@@ -1,0 +1,21 @@
+
+<% var data = !data ? require('./data.json').data : data %>
+
+<ul class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <% data.forEach(function(item, index) { %>
+    <% if (item.link) { %>
+      <li class="breadcrumbs__item" title="<%= item.name %>" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a href="<%= item.link %>" class="breadcrumbs__link" itemprop="item">
+          <span itemprop="name">
+              <%= item.name %>
+          </span>
+        </a>
+        <meta itemprop="position" content="<%= index + 1 %>" />
+      </li>
+    <% } else { %>
+      <li class="breadcrumbs__item" title="<%= item.name %>">
+        <%= item.name %>
+      </li>
+    <% } %>
+  <% }) %>
+</ul>

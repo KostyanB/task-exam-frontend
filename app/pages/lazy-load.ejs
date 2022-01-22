@@ -1,0 +1,46 @@
+<% const data = {
+    'title': 'Пример Lazy Load',
+    'flowContainerClass' : ''
+} %>
+<%- require("../layouts/header.ejs")(data) %>
+
+<!-- TODO: подумать с src -->
+
+<div class="container">
+    <h1>Пример Lazy Load</h1>
+
+    <h2>Обычное изображение</h2>
+
+
+    <h4>Через тэг img</h4>
+
+    <div style="min-height: 100vh">
+        <img data-src="https://cdn.pixabay.com/photo/2019/07/25/10/05/prague-4362201_960_720.jpg" width="559" height="720" alt="">
+    </div>
+
+    <h4>Битое изображение</h4>
+
+    <div style="min-height: 100vh">
+        <img data-src="https://cdn.pixabay.com/photo/2019/07/25/10/05/prague-" width="559" height="720" alt="Broken image">
+    </div>
+
+    <h4>Изображение с object-fit (для IE 11)</h4>
+
+    <div style="min-height: 100vh">
+        <img data-src="https://cdn.pixabay.com/photo/2019/07/25/10/05/prague-4362201_960_720.jpg" width="559" height="720" alt="Object fit IE test image" style="-o-object-fit: cover;font-family: 'object-fit:cover';object-fit: cover;">
+    </div>
+
+
+    <h2>Фоновое изображение</h2>
+
+    <h4>Обычное фоновое изображение</h4>
+
+    <div style="height: 600px; width: 600px;" data-background-image="https://cdn.pixabay.com/photo/2019/08/03/22/12/owl-4382740_960_720.jpg"></div>
+
+    <h4>Битое фоновое изображение</h4>
+
+    <div class="wow" style="height: 600px; width: 600px;" data-background-image="https://cdn.pixabay.com/photo/2019/08/03/22/12/owl-"></div>
+
+</div>
+
+<%- require("../layouts/footer.ejs")() %>

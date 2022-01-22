@@ -1,0 +1,16 @@
+<% /* Получение входных данных */ %>
+<% var data = !data ? require('./data.json') : data %>
+<!---->
+<div class="slider">
+    <div class="slider__wrapper swiper swiper-container my-Slider"
+        data-slider-images="<%= JSON.stringify(data) %>" data-slider="task-slider">
+        <div class="swiper-wrapper">
+        </div>
+    </div>
+    <%- require("../sliderInfo/template.ejs")({
+        data: {
+            'extraClasses': 'slider__info',
+            'targetSlider': 'task-slider'
+        }
+    })%>
+</div>

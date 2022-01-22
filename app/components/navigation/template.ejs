@@ -1,0 +1,16 @@
+<% var data = !data ? require('./data.json') : data %>
+<% var classes = data.extraClasses || {} %>
+<% var attrs = data.attrs || {} %>
+<!---->
+<div class="nav <%= classes.div || '' %>">
+    <button class="nav__prev <%= classes.next || '' %>" <%= attrs.prev || '' %> >
+        <svg>
+            <use href="../../icons/task-icons.svg#arrow"></use>
+        </svg>
+    </button>
+    <button class="nav__next <%= classes.prev || '' %>" <%= attrs.next || '' %> >
+        <svg>
+            <use href="../../icons/task-icons.svg#arrow"></use>
+        </svg>
+    </button>
+</div>

@@ -1,0 +1,26 @@
+@import "../../styles/helpers.css";
+
+.breadcrumbs {
+    @extend .reset-list;
+
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    user-select: none;
+    clear: both;
+
+    &__item {
+        display: flex;
+        &:not(:last-child)::after {
+            content: "-";
+            margin: 0 10px;
+        }
+    }
+
+    &__link {
+        border: 0;
+        color: currentColor;
+        position: relative;
+        transition: .3s;
+    }
+}

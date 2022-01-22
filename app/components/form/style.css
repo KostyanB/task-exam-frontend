@@ -1,0 +1,151 @@
+@import '../../styles/variables.css';
+@import '../../styles/mixins.css';
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        & > label {
+            @add-mixin label-text;
+
+            &
+                > span:not(.task-form__checkbox_label):not(.task-form__checkbox_field) {
+                color: var(--novalidColor);
+            }
+        }
+
+        & > textarea {
+            height: 140px;
+        }
+
+        & > input {
+            height: 50px;
+        }
+    }
+
+    &__input {
+        background: var(--whiteColor);
+        border: var(--disableBorder);
+        box-sizing: border-box;
+        border-radius: 4px;
+        cursor: text;
+        padding: 12px;
+        @add-mixin main-text;
+
+        &::placeholder {
+            @add-mixin holder-text;
+            opacity: 1;
+        }
+        &:focus {
+            outline: 0;
+            border-color: var(--blueColor);
+        }
+        &.invalid {
+            border-color: var(--novalidColor);
+        }
+    }
+
+    &__name {
+        width: 65%;
+    }
+
+    &__phone {
+        width: 31%;
+    }
+
+    &__comment {
+        width: 100%;
+    }
+
+    &__checkbox {
+        padding-left: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        cursor: pointer;
+
+        @media (--mobile) {
+            padding-left: 25px;
+            min-height: 20px;
+        }
+
+        &_input {
+            position: absolute;
+            left: 0;
+            top: 25%;
+            width: 25px;
+            height: 25px;
+            z-index: 5;
+            cursor: pointer;
+
+            &:checked {
+                & + .task-form__checkbox_field {
+                    &>svg {
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            &.invalid {
+                & + .task-form__checkbox_field {
+                    border-color: var(--novalidColor);
+                }
+            }
+        }
+        &_field {
+            position: absolute;
+            left: 0;
+            top: 25%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            transition: 0.2s;
+            background-color: var(--whiteColor);
+            border: 1px solid;
+            border-radius: 3px;
+            border-color: var(--grayColor);
+
+            & > svg {
+                width: 17px;
+                height: 11px;
+                color: var(--blueColor);
+                transform: scale(0);
+                transition: transform 0.2s;
+                margin: 0;
+            }
+
+            .invalid & {
+                border-color: var(--novalidColor);
+            }
+        }
+
+        &_label {
+            display: block;
+            margin-left: 10px;
+            @add-mixin main-text;
+
+            & > a {
+                color: var(--blueColor);
+                text-decoration: none;
+                border-bottom: 2px dashed var(--blueColor);
+                transition: 0.3s;
+            }
+        }
+    }
+}

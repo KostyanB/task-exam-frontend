@@ -1,0 +1,23 @@
+<% var data = !data ? require('./data.json').data : data %>
+
+<nav class="pagination" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <ul class="pagination__items">
+        <% data.forEach(function (item, index) { %>
+            <li class="pagination__item <%- item.active ? ' pagination__item--active' : '' %>">
+                <% if (typeof item.pageNum === "number") { %>
+                    <a href="<%= item.link %>" class="pagination__link" itemprop="url">
+                        <span itemprop="name">
+                            <%= item.pageNum %>
+                        </span>
+                    </a>
+                <% } %>
+
+                <% if (typeof item.pageNum !== "number") { %>
+                    <span>
+                        <%= item.pageNum %>
+                    </span>
+                <% } %>
+            </li>
+        <% }) %>
+    </ul>
+</nav>

@@ -1,0 +1,7 @@
+<% /* Получение входных данных */ %>
+<% var data = !data ? require('./data.json') : data %>
+
+<div class="task-info <%= data.classes || '' %>">
+    <%= data.text || '' %>
+    <span <%= data.attr || '' %> ></span>
+</div>

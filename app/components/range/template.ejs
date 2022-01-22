@@ -1,0 +1,8 @@
+<% /* Получение входных данных */ %>
+<% var data = !data ? require('./data.json') : data %>
+
+<div class="range">
+    <div id="<%= data.containerId %>" class="range__runner"
+        data-js-range="<%= JSON.stringify(data.preset) %>" >
+    </div>
+</div>

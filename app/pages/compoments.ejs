@@ -1,0 +1,25 @@
+<% const data = {
+    'title': 'Список компонентов',
+    'flowContainerClass' : ''
+} %>
+<%- require("../layouts/header.ejs")(data) %>
+
+<div class="container">
+
+    <h1>Компоненты</h1>
+
+    <h2>
+        Хлебные крошки
+    </h2>
+
+    <%- require('../components/breadcrumbs/template.ejs')() %>
+
+    <h2>
+        Пагинация
+    </h2>
+
+    <%- require('../components/pagination/template.ejs')() %>
+
+</div>
+
+<%- require("../layouts/footer.ejs")() %>

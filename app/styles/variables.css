@@ -1,0 +1,45 @@
+@import "media.css";
+
+:root {
+    --c-blue: #0190c6;
+    --c-black: #000000;
+    --c-gray: #a8a8a8;
+    --c-border: #e4e4e4;
+    --c-red: #bd2713;
+    --c-red-dark: #bd2713;
+    --c-green: #008492;
+
+    --controlBg: #e3e3e3;
+    --controlColor: #7a7a7a;
+    --controlTrack: #c4c4c4;
+
+    --inputBg: #fff;
+    --inputBorder: #b9b9b9;
+
+    --columnWidth: 25%;
+    --columnOffset: 20px;
+
+    /*practice colors*/
+    --blackColor: #25262B;
+    --grayColor: #C0CED9;
+    --lightgrayColor: #C0CED9;
+    --blueColor: #1C6CD5;
+    --redColor: #25262B;
+    --smokyColor: #F3F4F6;
+    --whiteColor: #FFF;
+    --hoverColor: #4F86CF;
+    --hoverBorder: 1px solid var(--blueColor);
+    --disableBorder: 1px solid var(--grayColor);
+    --holderColor: #999999;
+
+    --validColor: #1C6CD5;
+    --novalidColor: #FF3600;
+    --validBorder: 1px solid var(--blueColor);
+    --novalidBorder: 1px solid var(--novalidColor);
+}
+
+@media (--desktop-below) {
+    :root {
+        --columnWidth: 50%;
+    }
+}

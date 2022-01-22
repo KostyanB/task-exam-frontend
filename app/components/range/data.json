@@ -1,0 +1,13 @@
+{
+  "preset": {
+    "minVolume": 0,
+    "maxVolume": 100,
+    "startPos": 0,
+    "endPos": 100,
+    "step": 1,
+    "margin": 10,
+    "currency": "$",
+    "prefixes": ["от", "до"]
+  },
+  "containerId": "range"
+}

@@ -1,0 +1,90 @@
+/* Fonts mixins */
+@define-mixin title-text {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--blackColor);
+}
+@define-mixin h1-text {
+    @add-mixin title-text;
+    font-size: clamp(40px, 4.44vw, 56px);
+    /* font-size: 56px; */
+    line-height: 1.14;
+}
+@define-mixin h2-text {
+    @add-mixin title-text;
+    font-size: clamp(24px, 3.14vw, 40px);
+    /* font-size: 40px; */
+    line-height: 1.25;
+}
+@define-mixin h3-text {
+    @add-mixin title-text;
+    font-size: clamp(24px, 1.59vw, 20px);
+    /* font-size: 20px; */
+    line-height: 1.44;
+}
+@define-mixin text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.44;
+}
+@define-mixin main-text {
+    @add-mixin text;
+    color: var(--blackColor);
+}
+@define-mixin holder-text {
+    @add-mixin text;
+    font-weight: 300;
+    color: var(--holderColor);
+}
+@define-mixin label-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1.54;
+    color: #565861;
+    ;
+}
+@define-mixin novalid-text {
+    @add-mixin text;
+    font-weight: 300;
+    color: var(--novalidColor);
+}
+@define-mixin btn-text {
+    @add-mixin text;
+    font-weight: bold;
+    color: var(--whiteColor);
+}
+
+@define-mixin info-text {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.33;
+    color: var(--blueColor);
+}
+
+/* Button mixins */
+@define-mixin btn-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blueColor);
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    @add-mixin btn-text;
+    transition: background-color, color 0.4s;
+
+    &:hover,
+    &:active {
+        background-color: var(--grayColor);
+        @add-mixin btn-text;
+        color: var(--blueColor);
+    }
+
+    &:disabled {
+        background-color: var(--grayColor);
+        cursor: default;
+    }
+}
