@@ -11,27 +11,12 @@ export default class SliderInfo {
 
     constructor() {
         this.sliderInfo = document.querySelector(this.dataAttr);
-
-        /**
-         * !? не находит instance по атрибуту???
-        */
-
-        // this.targetSlider = this.sliderInfo.getAttribute(
-        //     `${this.dataAttr.slice(1, -1)}`,
-        // );
-
-        // this.swiper1 = App.Sliders.getSliderByAttr({
-        //     attr: this.els.taskSlider.slice(1, -1),
-        //     value: 'task-slider'//this.targetSlider,
-        // }).swiperInstance;
-        // console.log('this.swiper1: ', this.swiper1);
-
-        this.swiper = document.querySelector('[data-slider]')?.swiper;
         this.totalSlide = document.querySelector(this.els.totalSlide);
         this.activeSlide = document.querySelector(this.els.activeSlide);
-        this.slidesCount= this.swiper?.slides.length - 2;
+        this.swiper;
+        this.slidesCount;
 
-        this.swiper && this.init();
+        this.sliderInfo && this.init();
     }
 
     setTotalCount() {
@@ -53,44 +38,33 @@ export default class SliderInfo {
         this.activeSlide.textContent = toTwoDigit(active);
     }
 
-    setSliderParam() {
-        console.log('set');
+    getSliderParam() {
         const targetSlider = this.sliderInfo.getAttribute(
             `${this.dataAttr.slice(1, -1)}`,
-        );
+        ); // 'task-slider'
 
-        this.swiper = App.Sliders.getSliderByAttr({
-            attr: this.els.taskSlider,
-            value: targetSlider,
-        })?.swiperInstance;
+        this.swiper = App.Sliders.getInstanceByAttr({
+            attr: this.els.taskSlider.slice(1, -1),
+            value: 'task-slider',
+            // value: targetSlider, // ? так не находит
+        }).swiperInstance;
 
         this.slidesCount = this.swiper?.slides.length - 2;
-        if (this.swiper) {
-            this.listeners();
-            // this.setTotalCount();
 
-        }
+        this.setInitialParameters();
+    }
 
+    setInitialParameters() {
+        this.setTotalCount();
+        this.setShowActiveSlide();
+    }
+
+    setListeners() {
+        this.swiper.on('slideChange', () => this.setShowActiveSlide());
     }
 
     init() {
-
-        // if (this.swiper) {
-        // this.setSliderParam();
-        this.setTotalCount();
-        this.setShowActiveSlide();
-        this.listeners();
-        // }
-    }
-
-    listeners() {
-        this.swiper.on('slideChange', () => this.setShowActiveSlide());
-
-        // this.swiper.on('init', () => {
-        //     console.log(this.swiper);
-        //     this.setTotalCount();
-        //     this.setShowActiveSlide();
-        // })
-
+        this.getSliderParam();
+        this.setListeners();
     }
 }
