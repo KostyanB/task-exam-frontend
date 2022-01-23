@@ -15,7 +15,21 @@
 <div class="section">
     <div class="section__container">
         <h2 class="section__subtitle">Бегунок</h2>
-        <%- require("../components/range/template.ejs")()%>
+        <%- require("../components/range/template.ejs")({
+            'data': {
+                "preset": {
+                    "minVolume": 0,
+                    "maxVolume": 100,
+                    "startPos": 0,
+                    "endPos": 100,
+                    "step": 1,
+                    "margin": 10,
+                    "currency": "$",
+                    "prefixes": ["от", "до"]
+                },
+                "containerId": "range"
+            }
+        })%>
     </div>
 </div>
 
@@ -23,7 +37,29 @@
 <div class="section">
     <div class="section__container">
         <h2 class="section__subtitle">Слайдер</h2>
-        <%- require("../components/slider/template.ejs")()%>
+        <%- require("../components/slider/template.ejs")({
+            'data': {
+                "imgData": [
+                    {
+                        "url": "../../images/slider-1.jpg",
+                        "alt": "Developer"
+                    },
+                    {
+                        "url": "../../images/slider-2.jpg",
+                        "alt": "Computer"
+                    },
+                    {
+                        "url": "../../images/slider-3.jpg",
+                        "alt": "Copter"
+                    }
+                ],
+                "sliderSizes": {
+                    "width": "615",
+                    "height": "300"
+                },
+                "attrForTarget": "task-slider"
+            }
+        })%>
     </div>
 </div>
 

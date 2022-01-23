@@ -1,20 +1,8 @@
 {
-  "imgData": [
-    {
-      "url": "../../images/slider-1.jpg",
-      "alt": "Developer"
-    },
-    {
-      "url": "../../images/slider-2.jpg",
-      "alt": "Computer"
-    },
-    {
-      "url": "../../images/slider-3.jpg",
-      "alt": "Copter"
-    }
-  ],
+  "imgData": [],
   "sliderSizes": {
-    "width": "615",
-    "height": "300"
-  }
+    "width": "",
+    "height": ""
+  },
+  "attrForTarget": ""
 }
